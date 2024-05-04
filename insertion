@@ -1,0 +1,27 @@
+size = int(input("Enter the size of array: "))
+data = [0] * size
+
+n = int(input("Enter the number of elements less than size of array: "))
+for i in range(n):
+    print("Element number is:", i + 1, end=" ")
+    data[i] = int(input())
+
+print("\nEnter the number of elements you want to insert: ")
+item = int(input())
+print("\nPlease tell me at which location you want to insert the element: ")
+location = int(input())
+
+j = n - 1
+
+while j >= location - 1:
+    data[j + 1] = data[j]
+    j -= 1
+
+data[location - 1] = item
+
+print("\nAfter inserting the element:")
+for i in range(n + 1):
+    print("Element", i + 1, ":", data[i])
+
+print("\nThis item inserted:", item)
+print("At location:", location)
